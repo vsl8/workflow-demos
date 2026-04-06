@@ -1,0 +1,31 @@
+# .github/workflows/demo-pipeline.yml
+name: Demo CI/CD Pipeline
+ 
+on:
+  push:
+    branches:
+      - main   # Run this workflow when code is pushed to "main"
+ 
+jobs:
+  test:
+    name: 🧪 Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print test step
+        run: echo "Running tests... ✅"
+ 
+  build:
+    name: 🏗️ Build Application
+    runs-on: ubuntu-latest
+    needs: test     # This job runs only if "test" job is successful
+    steps:
+      - name: Print build step
+        run: echo "Building the application... 🔨"
+ 
+  deploy:
+    name: 🚀 Deploy Application
+    runs-on: ubuntu-latest
+    needs: build    # This job runs only if "build" job is successful
+    steps:
+      - name: Print deploy step
+        run: echo "Deploying the application... 🚀"
