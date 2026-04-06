@@ -1,5 +1,5 @@
 # .github/workflows/demo-pipeline.yml
-name: Demo CI/CD Pipeline
+name: w2-sequential-run-workflow
  
 on:
   push:
