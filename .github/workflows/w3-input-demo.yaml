@@ -1,4 +1,4 @@
-name: 🧪 Input Types Demo
+name: w3-input-demo-workflow
 
 on:
   workflow_dispatch:
