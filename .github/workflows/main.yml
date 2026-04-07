@@ -1,0 +1,14 @@
+name: w4-success-function-demo
+
+on: workflow_dispatch
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First step
+        run: echo "Step 1 passed"
+
+      - name: Run only if previous steps succeeded
+        if: ${{ success() }}
+        run: echo "All previous steps were successful"
